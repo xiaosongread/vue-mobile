@@ -4,6 +4,7 @@
       <div class="page-content">
         <mt-button @click="todetail">story</mt-button>
     </div>
+    <div class="scss">123</div>
   </div>
 </template>
 
@@ -46,5 +47,10 @@ export default {
 @import "~styles/variable.less";
 .page-content{
   .mb(98);
+}
+</style>
+<style scoped lang="less">
+.scss{
+  background: red;
 }
 </style>

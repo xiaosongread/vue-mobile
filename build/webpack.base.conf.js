@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+var ExtractPlugin = require('extract-text-webpack-plugin');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -61,8 +62,8 @@ module.exports = {
         loader: 'style-loader!css-loader!less-loader'
       },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style", 'css!sass') //这里用了样式分离出来的插件，如果不想分离出来，可以直接这样写 loader:'style!css!sass'
+        test:/\.scss$/,
+        loader:ExtractPlugin.extract('style-loader', 'css-loader!sass-loader')
       },
       {
         test: /\.js$/,
